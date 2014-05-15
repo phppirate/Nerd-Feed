@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222244AD19246E4100DC0A46 /* BNRTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222244AC19246E4100DC0A46 /* BNRTableViewController.m */; };
 		22D4FDCB1923E81800BFA1D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4FDCA1923E81800BFA1D4 /* Foundation.framework */; };
 		22D4FDCD1923E81800BFA1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4FDCC1923E81800BFA1D4 /* CoreGraphics.framework */; };
 		22D4FDCF1923E81800BFA1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4FDCE1923E81800BFA1D4 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222244AB19246E4100DC0A46 /* BNRTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRTableViewController.h; sourceTree = "<group>"; };
+		222244AC19246E4100DC0A46 /* BNRTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRTableViewController.m; sourceTree = "<group>"; };
 		22D4FDC71923E81800BFA1D4 /* NerdFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D4FDCA1923E81800BFA1D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22D4FDCC1923E81800BFA1D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 				22D4FDD91923E81800BFA1D4 /* BNRAppDelegate.h */,
 				22D4FDDA1923E81800BFA1D4 /* BNRAppDelegate.m */,
 				22D4FE401924257900BFA1D4 /* Storyboard.storyboard */,
+				222244AB19246E4100DC0A46 /* BNRTableViewController.h */,
+				222244AC19246E4100DC0A46 /* BNRTableViewController.m */,
 				22D4FE471924620900BFA1D4 /* BNRViewController.h */,
 				22D4FE481924620900BFA1D4 /* BNRViewController.m */,
 				22D4FDF91923E84E00BFA1D4 /* BNRPostsViewController.h */,
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D4FDD71923E81800BFA1D4 /* main.m in Sources */,
+				222244AD19246E4100DC0A46 /* BNRTableViewController.m in Sources */,
 				22D4FDDB1923E81800BFA1D4 /* BNRAppDelegate.m in Sources */,
 				22D4FDFB1923E84E00BFA1D4 /* BNRPostsViewController.m in Sources */,
 				22D4FE491924620900BFA1D4 /* BNRViewController.m in Sources */,

@@ -40,9 +40,7 @@
 - (void)stopRefresh
 
 {
-    
     [self.refreshControl endRefreshing];
-    
 }
      
      
@@ -109,13 +107,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *developer = [self.developers objectAtIndex:indexPath.row];
-    
-    NSString *message = [NSString stringWithFormat:@"Email: %@\n Comments: %@", developer[@"email"], developer[@"comments"]];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:developer[@"fullname"] message:message delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
-    
-    [alert show];
+    [self performSegueWithIdentifier:@"detail" sender:self];
 }
 
 @end

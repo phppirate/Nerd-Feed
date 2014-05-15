@@ -7,7 +7,6 @@
 //
 
 #import "BNRAppDelegate.h"
-#import "BNRPostsViewController.h"
 
 @implementation BNRAppDelegate
 
