@@ -33,7 +33,9 @@
                     <navigationItem key="navigationItem" title="This Title" id="VaE-3S-6C4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wrJ-zf-zHg">
                             <connections>
-                                <segue destination="nqU-SF-STX" kind="modal" modalPresentationStyle="formSheet" id="F00-eT-786"/>
+                                <segue destination="nqU-SF-STX" kind="popover" identifier="" popoverAnchorBarButtonItem="wrJ-zf-zHg" id="F00-eT-786">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -42,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="839" y="-182"/>
         </scene>
-        <!--Table View Controller - Developer-->
+        <!--Detail Table View Controller - Developer-->
         <scene sceneID="6tr-vE-r24">
             <objects>
-                <tableViewController id="Y2b-uP-kBv" sceneMemberID="viewController">
+                <tableViewController id="Y2b-uP-kBv" customClass="BNRDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OPs-cw-DnT">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,7 +116,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-Io-gTC">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-Io-gTC">
                                                     <rect key="frame" x="20" y="68" width="728" height="618"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,12 +130,13 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Y2b-uP-kBv" id="amf-Zb-9pS"/>
-                            <outlet property="delegate" destination="Y2b-uP-kBv" id="trZ-b5-wnx"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Developer" id="D8E-hw-aSq"/>
+                    <connections>
+                        <outlet property="comments" destination="5gJ-Io-gTC" id="T58-Gs-Lmh"/>
+                        <outlet property="email" destination="scL-eF-uOC" id="NvD-p2-vW5"/>
+                        <outlet property="name" destination="qkI-qQ-NwV" id="pDP-x4-G2x"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJP-sM-2Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,36 +151,26 @@
                         <viewControllerLayoutGuide type="bottom" id="N8F-RP-9YZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eeh-qH-U7L">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBP-X5-9mq">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcL-Ly-Csc">
-                                <rect key="frame" x="474" y="570" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismiss:" destination="nqU-SF-STX" eventType="touchUpInside" id="59z-Q7-a7G"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="450"/>
                     <connections>
                         <outlet property="web" destination="FBP-X5-9mq" id="cCp-b2-koL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8Q-i1-kpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="301"/>
+            <point key="canvasLocation" x="2668" y="105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2xS-cB-uY7">

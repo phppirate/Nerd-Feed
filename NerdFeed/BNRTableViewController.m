@@ -7,6 +7,7 @@
 //
 
 #import "BNRTableViewController.h"
+#import "BNRDetailTableViewController.h"
 
 @interface BNRTableViewController ()
 
@@ -85,7 +86,11 @@
         
         NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        self.developers = jsonData[@"developers"];
+        if (jsonData[@"developers"] != NULL) {
+            [[NSUserDefaults standardUserDefaults] setObject:jsonData[@"developers"] forKey:@"developers"];
+        }
+        
+        self.developers = [[NSUserDefaults standardUserDefaults] objectForKey:@"developers"];
         
         NSLog(@"%@", self.developers);
         
@@ -161,7 +166,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -169,7 +174,14 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+        NSDictionary *dev = [self.developers objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        
+        NSLog(@"%@", dev);
+        
+        [[NSUserDefaults standardUserDefaults] setObject:dev forKey:@"currentDeveloper"];
+    
 }
-*/
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BNRViewController.h"
+#import "BNRTableViewController.h"
 
 @interface BNRViewController ()
 
@@ -37,7 +38,6 @@
     
     // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
